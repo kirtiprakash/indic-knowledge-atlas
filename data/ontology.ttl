@@ -1,0 +1,24 @@
+@prefix icko: <https://example.org/icko/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+icko: a owl:Ontology ; rdfs:label "Indic Civilizational Knowledge Ontology pilot"@en .
+icko:SchoolOfThought a owl:Class .
+icko:Concept a owl:Class .
+icko:Claim a owl:Class .
+icko:Source a owl:Class .
+icko:Interpretation a owl:Class ; rdfs:subClassOf icko:Claim .
+icko:Thinker a owl:Class .
+icko:Text a owl:Class ; rdfs:subClassOf icko:Source .
+icko:Passage a owl:Class ; rdfs:subClassOf icko:Source .
+icko:EvidenceReview a owl:Class .
+icko:KnowledgeGap a owl:Class .
+icko:attributedToSchool a owl:ObjectProperty ; rdfs:domain icko:Claim ; rdfs:range icko:SchoolOfThought .
+icko:aboutConcept a owl:ObjectProperty ; rdfs:domain icko:Claim ; rdfs:range icko:Concept .
+icko:supportedBy a owl:ObjectProperty ; rdfs:domain icko:Claim ; rdfs:range icko:Source .
+icko:claimText a owl:DatatypeProperty ; rdfs:domain icko:Claim ; rdfs:range xsd:string .
+icko:evidenceStatus a owl:DatatypeProperty ; rdfs:domain icko:Claim ; rdfs:range xsd:string .

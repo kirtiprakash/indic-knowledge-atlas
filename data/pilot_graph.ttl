@@ -1,0 +1,103 @@
+@prefix ex: <https://example.org/indic-data/> .
+@prefix icko: <https://example.org/icko/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+icko: a owl:Ontology ;
+    rdfs:label "Indic Civilizational Knowledge Ontology pilot"@en .
+
+icko:EvidenceReview a owl:Class .
+
+icko:Interpretation a owl:Class ;
+    rdfs:subClassOf icko:Claim .
+
+icko:KnowledgeGap a owl:Class .
+
+icko:Passage a owl:Class ;
+    rdfs:subClassOf icko:Source .
+
+icko:Text a owl:Class ;
+    rdfs:subClassOf icko:Source .
+
+icko:Thinker a owl:Class .
+
+icko:aboutConcept a owl:ObjectProperty ;
+    rdfs:domain icko:Claim ;
+    rdfs:range icko:Concept .
+
+icko:attributedToSchool a owl:ObjectProperty ;
+    rdfs:domain icko:Claim ;
+    rdfs:range icko:SchoolOfThought .
+
+icko:claimText a owl:DatatypeProperty ;
+    rdfs:domain icko:Claim ;
+    rdfs:range xsd:string .
+
+icko:evidenceStatus a owl:DatatypeProperty ;
+    rdfs:domain icko:Claim ;
+    rdfs:range xsd:string .
+
+icko:supportedBy a owl:ObjectProperty ;
+    rdfs:domain icko:Claim ;
+    rdfs:range icko:Source .
+
+ex:c1 a icko:Claim ;
+    icko:aboutConcept <https://example.org/indic-data/concept/Self%20and%20Brahman> ;
+    icko:attributedToSchool <https://example.org/indic-data/school/Advaita%20Ved%C4%81nta> ;
+    icko:claimText "Advaita Vedānta is commonly interpreted as affirming the ultimate non-duality of ātman and Brahman." ;
+    icko:evidenceStatus "illustrative-unverified" .
+
+ex:c2 a icko:Claim ;
+    icko:aboutConcept <https://example.org/indic-data/concept/Self%20and%20Brahman> ;
+    icko:attributedToSchool <https://example.org/indic-data/school/Vi%C5%9Bi%E1%B9%A3%E1%B9%AD%C4%81dvaita%20Ved%C4%81nta> ;
+    icko:claimText "Viśiṣṭādvaita treats selves as real and dependent upon Brahman while maintaining their distinctness within a qualified non-dual framework." ;
+    icko:evidenceStatus "illustrative-unverified" .
+
+ex:c3 a icko:Claim ;
+    icko:aboutConcept <https://example.org/indic-data/concept/Self%20and%20Brahman> ;
+    icko:attributedToSchool <https://example.org/indic-data/school/Dvaita%20Ved%C4%81nta> ;
+    icko:claimText "Dvaita maintains a real distinction between individual selves and the supreme deity." ;
+    icko:evidenceStatus "illustrative-unverified" .
+
+ex:c4 a icko:Claim ;
+    icko:aboutConcept <https://example.org/indic-data/concept/Liberation> ;
+    icko:attributedToSchool <https://example.org/indic-data/school/Advaita%20Ved%C4%81nta> ;
+    icko:claimText "Within classical Advaita exposition, liberating knowledge removes ignorance of the self's relation to Brahman." ;
+    icko:evidenceStatus "illustrative-unverified" .
+
+ex:c5 a icko:Claim ;
+    icko:aboutConcept <https://example.org/indic-data/concept/Liberation> ;
+    icko:attributedToSchool <https://example.org/indic-data/school/Dvaita%20Ved%C4%81nta> ;
+    icko:claimText "Within classical Dvaita exposition, liberation does not erase the fundamental distinction between individual self and God." ;
+    icko:evidenceStatus "illustrative-unverified" .
+
+ex:c6 a icko:Claim ;
+    icko:aboutConcept <https://example.org/indic-data/concept/Liberation> ;
+    icko:attributedToSchool <https://example.org/indic-data/school/Vi%C5%9Bi%E1%B9%A3%E1%B9%AD%C4%81dvaita%20Ved%C4%81nta> ;
+    icko:claimText "Within Viśiṣṭādvaita, liberation is commonly described in terms of enduring communion with, and service to, the supreme being." ;
+    icko:evidenceStatus "illustrative-unverified" .
+
+<https://example.org/indic-data/school/Advaita%20Ved%C4%81nta> a icko:SchoolOfThought ;
+    rdfs:label "Advaita Vedānta" .
+
+<https://example.org/indic-data/school/Dvaita%20Ved%C4%81nta> a icko:SchoolOfThought ;
+    rdfs:label "Dvaita Vedānta" .
+
+<https://example.org/indic-data/school/Vi%C5%9Bi%E1%B9%A3%E1%B9%AD%C4%81dvaita%20Ved%C4%81nta> a icko:SchoolOfThought ;
+    rdfs:label "Viśiṣṭādvaita Vedānta" .
+
+icko:Concept a owl:Class .
+
+icko:Source a owl:Class .
+
+<https://example.org/indic-data/concept/Liberation> a icko:Concept ;
+    rdfs:label "Liberation" .
+
+<https://example.org/indic-data/concept/Self%20and%20Brahman> a icko:Concept ;
+    rdfs:label "Self and Brahman" .
+
+icko:SchoolOfThought a owl:Class .
+
+icko:Claim a owl:Class .
+
